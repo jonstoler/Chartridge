@@ -87,7 +87,7 @@ $(document).ready(function(){
 		else{ $(this).attr("changed", "true"); }
 	});
 
-	$("#add-another-checkpoint").click(function(e){
+	$("#add-another-checkpoint, #add-another-bonus").click(function(e){
 		e.preventDefault();
 		var div = document.createElement("div");
 		var n = document.createElement("input");
@@ -108,18 +108,31 @@ $(document).ready(function(){
 			$("#add-another-checkpoint").click();
 		}
 	});
+	$("body").on("keypress", ".add-bonus input", function(e){
+		if(e.keyCode == 13 && !$(this).next().is("input")){
+			$("#add-another-bonus").click();
+		}
+	});
 
-	$("body").on("blur", ".add-checkpoint input", function(){
+	$("body").on("blur", ".add-checkpoint input, .add-bonus input", function(){
 		if($(this).val().match(/(.*)\{([0-9]*)-([0-9]*)\}/g)){
 			var start = $(this).val().replace(/(.*)\{([0-9]*)-([0-9]*)\}/gm, "$2");
 			var end = $(this).val().replace(/(.*)\{([0-9]*)-([0-9]*)\}/gm, "$3");
 			for(var i = start; i <= end; i++){
+				var div = document.createElement("div");
 				var n = document.createElement("input");
 				n.setAttribute("type", "text");
 				n.setAttribute("value", $(this).val().replace(/(.*)\{([0-9]*)-([0-9]*)\}/gm, "$1") + i);
-				$(n).insertBefore($(this));
+				var x = document.createElement("span");
+				x.setAttribute("class", "x");
+				x.innerHTML = "x";
+
+				div.appendChild(n);
+				div.appendChild(x);
+
+				$(div).insertBefore($(this).parent());
 			}
-			$(this).remove();
+			$(this).parent().remove();
 		}
 
 		if($(this).val() == "" && ($(this).prev().is("input") || $(this).next().is("input"))){
