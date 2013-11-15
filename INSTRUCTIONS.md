@@ -1,27 +1,11 @@
 # CHARTRIDGE INSTRUCTIONS
 
 ## Installation
-Chartridge uses a custom version of the [Kirby Toolkit][kirby], which is currently under active development.
+Fill out `config.php` for your server and configuration.
 
-As a result, the toolkit is constantly changing and bugs are constantly being fixed. It is therefore beneficial for you to use the latest version always and it would be irresponsible for me to include it directly in Chartridge's repository.
+**The first time you run Chartrige, load `boot.php`.**
 
-In order for Chartridge to work, do the following:
-
-1. Download the [Kirby Toolkit][kirby].
-2. Copy the downloaded files to Chartridge's root directory and rename the folder `kirby`.
-3. Move the `kirby-addons` folder to the newly created `kirby` folder and rename `kirby-addons` to `addons`.
-4. Make the following change to `bootstrap.php` in the newly created `kirby` folder. After the line:  
-<pre>$autoloader->start();</pre>
-add the following:  
-<pre>// load addons
-require_once(KIRBY_TOOLKIT_ROOT . DS . 'addons' . DS . 'bootstrap.php');
-require_once(KIRBY_TOOLKIT_ROOT . DS . 'addons' . DS . 'helpers.php');</pre>
-
-Finally, fill in the information in `config.php` for your server and configuration.
-
-**The first time you run Chartrige, load `boot.php`.** Chartridge is now fully installed!
-
-[kirby]: https://github.com/getkirby/toolkit
+Chartridge is now fully installed!
 
 
 ## How Chartridge Works

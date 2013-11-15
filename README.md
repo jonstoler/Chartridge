@@ -3,8 +3,13 @@
 version 0.2 alpha - November 4, 2013
 
 ## License
-Chartridge is licensed under the [&#9786; License](https://github.com/jonstoler/The-Happy-License).
+Chartridge is licensed under the [&#9786; License](https://github.com/jonstoler/The-Happy-License).  
+[Kirby Toolkit][toolkit] is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
 
+> ### Note
+> [Kirby Toolkit][toolkit], which is under active development, is included only because recent changes to the toolkit break Chartridge.
+> 
+> If you wish to use [Kirby Toolkit][toolkit] for your own applications, it is strongly advised that you download the latest version.
 
 ## About
 Chartridge is a self-hosted game analytic framework. It runs on your own server to provide simple, non-obtrusive analytics for your players.
@@ -21,3 +26,5 @@ Chartridge comes with a front-end for you to view your analytics from your brows
 
 ## Install Instructions
 Please see `INSTRUCTIONS.md` for information on how to install and use Chartridge.
+
+[toolkit]: https://github.com/getkirby/toolkit
